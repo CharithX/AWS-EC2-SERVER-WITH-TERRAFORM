@@ -96,7 +96,7 @@ resource "aws_instance" "ubun-server" {
 connection {
     type     = "ssh"
     user        = "ubuntu"
-    private_key = file("terraform-key.pem")
+    private_key = file("Add your private key")
     host     = self.public_ip
   }
 
