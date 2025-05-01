@@ -48,14 +48,13 @@ touch terraform.tfvars
 
 In the terraform.tfvars file, provide values for the variables like cidr_block, subnet_cidr_block, ami_id, etc. Example:
 
-hcl
-Copy
-Edit
+```bash
 cidr_block           = "10.0.0.0/16"
 subnet_cidr_block    = "10.0.1.0/24"
 availability_zone    = "us-east-1a"
 ami_id               = "ami-xxxxxxxxxxxxxxxxx"
 key_name             = "your-ssh-key-name"
+```
 
 ### 4. Initialize Terraform
 Initialize the Terraform project to download the necessary provider plugins:
