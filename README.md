@@ -27,27 +27,25 @@ Clone this repository to your local machine.
 git clone https://github.com/your-username/AWS-EC2-SERVER-WITH-TERRAFORM.git
 cd AWS-EC2-SERVER-WITH-TERRAFORM
 ```
-
-2. Configure AWS Credentials
+### 2. Configure AWS Credentials
 Make sure your AWS CLI is configured with the proper credentials:
 
 
 aws configure
 Alternatively, you can use environment variables:
 
-bash
-Copy
-Edit
+```bash
 export AWS_ACCESS_KEY_ID="your-access-key"
 export AWS_SECRET_ACCESS_KEY="your-secret-key"
-export AWS_DEFAULT_REGION="us-east-1"
-3. Define Your Variables
+```
+
+### 3. Define Your Variables
 Create a terraform.tfvars file to specify values for your variables:
 
-bash
-Copy
-Edit
+```bash
 touch terraform.tfvars
+```
+
 In the terraform.tfvars file, provide values for the variables like cidr_block, subnet_cidr_block, ami_id, etc. Example:
 
 hcl
@@ -58,47 +56,25 @@ subnet_cidr_block    = "10.0.1.0/24"
 availability_zone    = "us-east-1a"
 ami_id               = "ami-xxxxxxxxxxxxxxxxx"
 key_name             = "your-ssh-key-name"
-4. Initialize Terraform
+
+### 4. Initialize Terraform
 Initialize the Terraform project to download the necessary provider plugins:
 
-bash
-Copy
-Edit
+```bash
 terraform init
-5. Apply Terraform Configuration
+```
+### 5. Apply Terraform Configuration
 Run the following command to apply the configuration and create the resources on AWS:
 
-bash
-Copy
-Edit
+```bash
 terraform apply
 Terraform will prompt you to confirm the action. Type yes to proceed.
+```
 
-6. Access the EC2 Instance
-Once the EC2 instance is created, Terraform will output the public IP address of the instance:
-
-bash
-Copy
-Edit
-terraform output instance_public_ip
-Use this public IP to access your EC2 instance via SSH:
-
-bash
-Copy
-Edit
-ssh -i /path/to/your/private-key.pem ubuntu@<instance_public_ip>
-7. Docker Installation on EC2
-The Terraform configuration ensures Docker is installed and running on your EC2 instance. The following commands are executed during the provisioning process on the EC2 instance:
-
-bash
-Copy
-Edit
-sudo apt-get update
-sudo apt-get install -y docker.io
-sudo systemctl start docker
-sudo systemctl enable docker
-8. Clean Up
+### 6 . Clean Up
 When you're done with the resources, destroy the infrastructure created by Terraform:
 
+```bash
 terraform destroy
 # This will remove all resources (VPC, EC2 instance, security group, etc.) from AWS.
+```
