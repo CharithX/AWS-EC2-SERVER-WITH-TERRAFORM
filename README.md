@@ -26,14 +26,12 @@ Clone this repository to your local machine.
 ```bash
 git clone https://github.com/your-username/AWS-EC2-SERVER-WITH-TERRAFORM.git
 cd AWS-EC2-SERVER-WITH-TERRAFORM
-
+```
 
 2. Configure AWS Credentials
 Make sure your AWS CLI is configured with the proper credentials:
 
-bash
-Copy
-Edit
+
 aws configure
 Alternatively, you can use environment variables:
 
